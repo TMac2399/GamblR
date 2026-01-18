@@ -4,7 +4,9 @@ import random
 import sqlite3
 import datetime
 
-TOKEN = MTQ2MjIzNTAyMTY4MjE0NzQwOA.GvVOPo.2KWlGgJ5P6F4u_hjLC9OM5On5vrq29eSDKvXOw
+TOKEN = import os
+TOKEN = os.getenv("TOKEN")
+
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -69,3 +71,4 @@ async def last5(ctx):
     await ctx.respond(f"📊 Last 5 Results:\n{results}")
 
 bot.run(TOKEN)
+
